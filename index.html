@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1677ff">
+  <title>ROCKETUP</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark">R</div>
+    <div><div class="brand">ROCKETUP</div><div class="subtitle">Твоя коллекция начинается здесь</div></div>
+    <div class="avatar" id="avatar">R</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">ТВОЯ ВСЕЛЕННАЯ ПРЕДМЕТОВ</div>
+      <h1>Собирай свою<br><span>коллекцию</span></h1>
+      <p>Открывай каталог и собирай уникальные виртуальные предметы.</p>
+      <button class="primary" data-target="catalog">Открыть каталог <span>→</span></button>
+      <div class="orb orb-one"></div><div class="orb orb-two"></div>
+    </section>
+
+    <section class="section" id="home">
+      <div class="section-heading"><div><div class="eyebrow">ROCKETUP SPACE</div><h2>Твой профиль</h2></div><span class="pill">BETA</span></div>
+      <div class="profile-card">
+        <div class="profile-icon">✦</div>
+        <div class="profile-copy"><strong id="user-name">Гость</strong><span>Добро пожаловать в ROCKETUP</span></div>
+        <div class="profile-arrow">›</div>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong id="item-count">0</strong><span>Предметов</span></div>
+        <div class="stat"><strong>6</strong><span>В каталоге</span></div>
+        <div class="stat"><strong>0</strong><span>Наград</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="catalog">
+      <div class="section-heading"><div><div class="eyebrow">ПОПОЛНЯЙ КОЛЛЕКЦИЮ</div><h2>Каталог</h2></div><span class="count" id="catalog-count">Загрузка…</span></div>
+      <div id="catalog-status" class="status">Подключаем каталог…</div>
+      <div class="item-grid" id="catalog-grid"></div>
+    </section>
+
+    <section class="section" id="collection">
+      <div class="section-heading"><div><div class="eyebrow">ТВОИ НАХОДКИ</div><h2>Коллекция</h2></div></div>
+      <div id="collection-empty" class="empty-state">Пока здесь пусто. Предметы из каталога появятся здесь после добавления.</div>
+      <div class="item-grid" id="collection-grid"></div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button class="nav-btn active" data-target="home"><span>⌂</span>Главная</button>
+    <button class="nav-btn" data-target="catalog"><span>▦</span>Каталог</button>
+    <button class="nav-btn" data-target="collection"><span>✧</span>Коллекция</button>
+  </nav>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
