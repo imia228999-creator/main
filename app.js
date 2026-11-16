@@ -1,6 +1,6 @@
 // ROCKETUP: безопасный клиентский каталог. Используйте только публичный publishable/anon key.
-const SUPABASE_URL = "SUPABASE_URL_HERE";
-const SUPABASE_PUBLISHABLE_KEY = "SUPABASE_PUBLISHABLE_KEY_HERE";
+const SUPABASE_URL = "https://lataxcgzomhyxttmuwkm.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_2gXn2a2YC4Nb0F_cBISf4A_40P8hWgn";
 
 const fallbackItems = [
   {name:"Ледяная звезда",rarity:"rare",description:"Сияющий символ холодной галактики.",icon:"✦"},
@@ -42,6 +42,8 @@ function card(item, owned=false) {
 function renderCatalog(items) {
   grid.replaceChildren(); items.forEach(item => grid.append(card(item)));
   document.getElementById("catalog-count").textContent = items.length + " предметов";
+  const stat = document.querySelector(".stats .stat:nth-child(2) strong");
+  if (stat) stat.textContent = items.length;
 }
 function renderCollection() {
   collectionGrid.replaceChildren();
